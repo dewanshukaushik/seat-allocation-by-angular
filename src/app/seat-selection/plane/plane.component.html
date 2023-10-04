@@ -1,0 +1,12 @@
+<h2>Seat Allocation</h2>
+<div *ngIf="message">{{ message }}</div>
+<div *ngIf="!message">
+  <form>
+    <label for="numSeats">Number of seats:</label>
+    <input type="number" id="numSeats" [(ngModel)]="numSeats"  [ngModelOptions]="{standalone:true}"/>
+    <button (click)="allocateSeats(numSeats)">Allocate Seats</button>
+    <h4>Allocated Seat Numbers</h4>
+    <div *ngFor="let seat of allocateSeatsValue">
+        {{seat}}</div>
+  </form>
+</div>
